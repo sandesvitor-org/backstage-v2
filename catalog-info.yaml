@@ -19,7 +19,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: VitorSandes
+  name: sandesvitor
   namespace: default
 spec:
   profile:
