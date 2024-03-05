@@ -98,7 +98,7 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, Domain, API, Resource, Location]
+    - allow: [Component, System, Domain, API, Resource, Location, Template]
   locations:
     - type: url
       target: https://github.com/sandesvitor-org/backstage-templates/blob/main/all.yaml
