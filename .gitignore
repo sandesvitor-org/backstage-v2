@@ -1,6 +1,6 @@
 # macOS
 .DS_Store
-
+app-config.yaml
 # Logs
 logs
 *.log

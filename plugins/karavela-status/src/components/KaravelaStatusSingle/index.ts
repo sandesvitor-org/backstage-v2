@@ -1,0 +1,1 @@
+export { KaravelaStatusSingle } from './KaravelaStatus';

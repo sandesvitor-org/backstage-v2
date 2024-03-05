@@ -33,8 +33,25 @@ import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
+import { githubAuthApiRef } from '@backstage/core-plugin-api';
+import { SignInPage } from '@backstage/core-components';
+import { KaravelaStatusPage, KaravelaStatusPageSingle } from '@internal/plugin-karavela-status';
 
 const app = createApp({
+  components: {
+    SignInPage: props => (
+      <SignInPage
+        {...props}
+        auto
+        provider={{
+          id: 'github-auth-provider',
+          title: 'GitHub',
+          message: 'Sign in using GitHub',
+          apiRef: githubAuthApiRef,
+        }}
+      />
+    ),
+  },
   apis,
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
@@ -93,6 +110,8 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
+    <Route path="/karavela-status" element={<KaravelaStatusPage />} />
+    <Route path="/karavela-status/:id" element={<KaravelaStatusPageSingle />} />
   </FlatRoutes>
 );
 

@@ -1,0 +1,9 @@
+site_name: Backstage Stone Tech
+
+nav:
+  - Home: index.md
+  - Plugins:
+    - Github Pull Request Board: plugins/github-pr-boards.md
+
+plugins:
+  - techdocs-core

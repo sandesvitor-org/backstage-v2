@@ -1,0 +1,1 @@
+export { ChangeFetchSingleComponent } from './ChangeFetchSingleComponent';
